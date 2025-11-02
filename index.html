@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Kaunas JUG Rocks -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Kaunas JUG (Java/JVM User Group) - Kaunas Java enthusiasts">
+    <title>Kaunas JUG</title>
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="css/bootstrap-social.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+      .logocont { margin: 5px;}
+    </style>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+	
+	<script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+     ga('create', 'UA-56545403-1', 'auto');
+     ga('send', 'pageview');
+    </script>
+</head>
+<body style="padding-top: 10px;">
+<!-- It's embarrassing, but this page is not JSP or Servlet  .. sorry folks. But don't tell it to anyone!  -->
+
+<div class="container">
+<div class="row">
+
+     <div class="col-md-3 hidden-sm hidden-md hidden-lg">
+        <div class="header">
+            <a href="/"><img src="img/jug_kaunas_logo_color.png" style="height: 200px;" alt="Kaunas JUG"></a>
+            <h4><a href="mailto:kaunas.jug@gmail.com">kaunas.jug@gmail.com</a></h4>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-8 hidden-xs">
+                <h1 style="font-size: 56px; margin-top: 0px;"><b>Kaunas JUG</b></h1>
+                <h4>Java &amp; JVM User Group</h4>
+                <h4><a href="mailto:kaunas.jug@gmail.com">kaunas.jug@gmail.com</a></h4>
+            </div>
+            <div class="col-md-4">
+                <!-- <p>&nbsp;</p> -->
+                <p><a href="https://www.linkedin.com/groups/7467388/" class="btn btn-primary btn pull-right2" role="button">Join us at <strong>Linked In</strong> group Now!<br>and never miss latest news »</a></p>
+            </div>
+        </div>
+
+        <div class="header2">
+            <p style="letter-spacing: 1px">Kaunas&nbsp;JUG is a community of Java developers who communicate about Java &amp; JVM
+                out of JVM. User Group operates in second largest city of Lithuania -
+                <a href="https://visit.kaunas.lt/lt/">Kaunas</a>.
+                Novice or Professional - does not matter, join us NOW!
+            </p>
+        </div>
+    </div>
+    <div class="col-md-3 hidden-xs">
+        <div class="header">
+            <a href="/"><img src="img/jug_kaunas_logo_color.png" style="height: 200px;" alt="Kaunas JUG"></a>
+        </div>
+    </div>
+</div>
+</div> <!-- .container -->
+
+
+<!-- Jumbotron with Agenda -->
+<div class="container ">
+		
+        <div class="row">
+        <div class="col-md-2">
+            <div class="header">
+                <!-- <p><strong>Become One of Us</strong></p> -->
+                <!-- <a class="btn btn-social-icon btn-google-plus" href="https://plus.google.com/+KaunasJUG"> <i class="fa fa-google-plus"></i></a> -->
+                <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/KaunasJUG"> <i class="fa fa-facebook"></i></a>
+                <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/KaunasJUG"> <i class="fa fa-twitter"></i></a>
+                <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/groups/7467388/"> <i class="fa fa-linkedin"></i></a>
+            </div>
+
+        </div>
+        <div class="col-md-10">
+            <div class="header">
+                <!-- <p><strong>Our Friends</strong></p> -->
+                <div class="row row-valign"><!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://satalia.lt/"><img src="img/friends/satalia.png" class="logocont" style="height: 20px;" alt="Satalia Lithuania"/></a>
+                    </div>
+                    -->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="https://cujo.com/"><img src="img/friends/cujo_ai_2.svg" class="logocont" style="height:42px;" alt="CUJO AI"/></a>
+                    </div> -->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="https://cast.ai/"><img src="img/friends/cast_ai.svg" class="logocont" style="height:42px;" alt="CAST AI"/></a>
+                    </div> -->
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://www.festo.com/"><img src="img/friends/festo.svg" class="logocont" style="height:28px;" alt="festo"/></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://www.cgi.com/"><img src="img/friends/CGI_Inc.-Logo.wine.png" class="logocont" style="height: 48px;" alt="CGI"/></a>
+                    </div>
+
+   <!--            <div class="col-sm-3">
+					   <a href="https://www.oracle.com/">
+					      <svg class="u30-oicn" xmlns="http://www.w3.org/2000/svg" width="231" height="30" viewBox="0 0 231 30" preserveAspectRatio="xMinYMid"><path d="M99.61,19.52h15.24l-8.05-13L92,30H85.27l18-28.17a4.29,4.29,0,0,1,7-.05L128.32,30h-6.73l-3.17-5.25H103l-3.36-5.23m69.93,5.23V0.28h-5.72V27.16a2.76,2.76,0,0,0,.85,2,2.89,2.89,0,0,0,2.08.87h26l3.39-5.25H169.54M75,20.38A10,10,0,0,0,75,.28H50V30h5.71V5.54H74.65a4.81,4.81,0,0,1,0,9.62H58.54L75.6,30h8.29L72.43,20.38H75M14.88,30H32.15a14.86,14.86,0,0,0,0-29.71H14.88a14.86,14.86,0,1,0,0,29.71m16.88-5.23H15.26a9.62,9.62,0,0,1,0-19.23h16.5a9.62,9.62,0,1,1,0,19.23M140.25,30h17.63l3.34-5.23H140.64a9.62,9.62,0,1,1,0-19.23h16.75l3.38-5.25H140.25a14.86,14.86,0,1,0,0,29.71m69.87-5.23a9.62,9.62,0,0,1-9.26-7h24.42l3.36-5.24H200.86a9.61,9.61,0,0,1,9.26-7h16.76l3.35-5.25h-20.5a14.86,14.86,0,0,0,0,29.71h17.63l3.35-5.23h-20.6" transform="translate(-0.02 0)"></path></svg>
+                       </a>
+                    </div>      -->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.jetbrains.com/idea/"><img src="img/friends/logo_intellij_idea.gif" class="logocont" style="height: 30px;" alt="Jet Brains"/></a>
+                    </div> -->
+                    <!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://cloud.oracle.com/cloud-infrastructure"><img src="img/friends/oci_logo.jpg" class="logocont" style="height:48px;" alt="Oracle Cloud Infrastructure"/></a>
+                    </div> -->
+                    <!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://ignitis.lt"><img src="img/friends/ignitis.svg" class="logocont" style="height:48px;" alt="Ignitis"/></a>
+                    </div> -->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.devbridge.com/"><img src="img/friends/devbridge.jpg" class="logocont" style="height:32px;" alt="Devbridge"/></a>
+                    </div> -->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="https://voltasit.com/"><img src="img/friends/voltas_it_logo_black.png" class="logocont" style="height:23px;" alt="Voltas IT"/></a>
+                    </div> -->
+<!--                    <div class="col-sm-3 col-xs-6">-->
+<!--                        <a href="https://www.cognizant.com/lt/"><img src="img/friends/cognizant_logo.jpg" class="logocont" style="height:40px;" alt="Cognizant"/></a>-->
+<!--                    </div>-->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="http://startupspace.org/"><img src="img/friends/startupspace_logo.png" class="logocont" style="height: 48px;" alt="Startup Space"/></a>
+                    </div> -->
+                    <!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.operationalrisksolutions.com/en/das-unternehmen/ueber-uns/oprisksolutions-kaunas"><img src="img/friends/logo_oprisksol.png" class="logocont" style="height: 40px;" alt="Operational Risk Solutions"/></a>
+                    </div> -->
+                    <!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://sdacademy.lt/"><img src="img/friends/sda-logo.png" class="logocont" style="height: 40px;" alt="Software Development Academy"/></a>
+                    </div> -->
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.zenedge.com/"><img src="img/friends/o-zenedge-horz-rgb.png" class="logocont" style="height: 40px;" alt="Oracle+Zenedge"/></a>
+                    </div> -->
+                </div>
+                <div class="row row-valign">
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.jetbrains.com/idea/"><img src="img/friends/IntelliJ_IDEA.png" class="logocont" style="height: 48px;" alt="Jet Brains"/></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://www.juvare.com/"><img src="img/friends/juvare_logo.png" class="logocont" style="height:40px;" alt="Juvare | Emergency Preparedness &amp; Response"/></a>
+                    </div> 
+
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.r1rcm.com/"><img src="img/friends/r1.png" class="logocont" style="height:28px;" alt="R1 RCM"/></a>
+                    </div> -->
+                    <!--
+                    <div class="col-sm-3">
+                        <a href="http://www.oreilly.com"><img src="img/friends/ug_ad_250_viguy.gif" class="logocont" style="height:40px" alt="O'Reilly"/></a>
+                    </div>
+                    -->
+                    <!--
+                    <div class="col-sm-3">
+                        <a href="http://www.caretcode.com/"><img src="img/friends/caretcode.png" class="logocont" style="height:32px;" alt="^code"/></a>
+                    </div>
+                    -->			
+                    <!-- <div class="col-sm-3">
+                        <a href="http://www.geecon.org" target="_blank" >
+                            <img src="http://geecon2014.s3.amazonaws.com/gcfriend2.png" alt="GeeCON 2014"/>
+                        </a>
+                    </div>-->
+                    <div class="col-sm-3 col-xs-6">
+                      <a href="https://www.oracle.com/"><img src="img/friends/oracle.svg" class="logocont" style="height:18px;" alt="Oracle"/></a>
+                    </div>
+
+                    <!--<div class="col-sm-3 col-xs-6">
+                        <a href="http://www.adform.com/"><img src="img/friends/adform.png" class="logocont" style="height:32px;" alt="Adform"/></a>
+                    </div>-->
+
+                    <!-- <div class="col-sm-3 col-xs-6">
+                        <a href="http://www.getcujo.com/"><img src="img/friends/cujo_ai.jpg" class="logocont" style="height:30px;" alt="CUJO AI"/></a>
+                    </div>
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://www.tide.co/"><img src="img/friends/tide-logo-blue-noreg.svg" class="logocont" style="height:30px;" alt="Tide"/></a>
+                    </div> -->
+					<!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://zenitech.co.uk/"><img src="img/friends/zenitech_logo.jpg" class="logocont" style="height:30px;" alt="Zenitech"/></a>
+                    </div>-->
+                    <!--
+                    <div class="col-sm-3">
+                        <a href="http://www.wix.com/"><img src="img/friends/wixlogo.jpg" class="logocont" style="height:32px;" alt="Wix"/></a>
+                    </div> -->
+                    
+<!--
+                    <div class="col-sm-3 col-xs-6">
+                        <a href="https://sdacademy.lt/"><img src="img/friends/soft-dev-academ-logo.png" class="logocont" style="height:42px;" alt="Software Development Academy"/></a>
+                    </div> -->
+                    <!--
+                    <div class="col-sm-3">
+                        <a href="http://www.telesoftas.com/"><img src="img/friends/telesoftas_logo.png" class="logocont" style="height:32px;" alt="TeleSoftas"/></a>
+                    </div>
+                    -->
+                </div>
+                <!--
+                <div class="row">
+
+                    <div class="col-sm-3">
+                        <a href="http://www.4financeit.com/"><img src="img/friends/logo_4financeit.png" class="logocont" style="height:30px;" alt="4financeIT"/></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="http://www.ibm.com/"><img src="img/friends/ibm.png" class="logocont" style="height:40px; margin-bottom: 10px;" alt="IBM"/></a>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+
+    </div>
+
+    <p>&nbsp;</p>
+  
+  <!-- ACTIVATE JUMBOTRON ONLY ON EVENT TICKET SALE 'display: block', otherwise 'display: none' -->
+	<div class="jumbotron" style="display: block;">
+    <div class="row">
+          <div class="col-md-12">
+                <h3 style="text-align: center;">Grab your <a href="https://kaunas-jug60.eventbrite.com/">ticket here!</a></h3>
+               <h1>Kaunas JUG #60 <small style="color: darkred;">(starts at 18:00)</small></h1>
+
+              <!-- <h3>We apologize for the inconvenience.</h3> -->
+
+          <!-- </div> -->
+          <!-- <div class="col-md-6"><h3 class="pull-right">Feb 20th, 2025 <b>18:00</b>-21:00 Tuesday</h3></div> -->
+          <!-- <div class="col-md-6"> -->
+            <!-- <h3 class="pull-right">19 Sep, 2024 (Thursday) 19:00-21:30</h3> -->
+          <!-- </div> -->
+        </div>
+
+	     <div class="row">
+              <div class="col-md-12"> 
+
+                <div id="eventbrite-widget-container-1238543509979"></div>
+
+                <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+                
+                <script type="text/javascript">
+                    var exampleCallback = function() {
+                        console.log('Order complete!');
+                    };
+                
+                    window.EBWidgets.createWidget({
+                        // Required
+                        widgetType: 'checkout',
+                        eventId: '1238543509979',
+                        iframeContainerId: 'eventbrite-widget-container-1238543509979',
+                
+                        // Optional
+                        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+                        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+                    });
+                </script>
+
+                
+              </div>
+         </div>
+
+         <!-- <ul class="list-group">
+            <li class="list-group-item">
+              <span class="badge">19:00-21:00</span><b>Talks</b>, for the topics look at <a href="https://kaunas-jug57.eventbrite.com">https://kaunas-jug57.eventbrite.com</a><br />
+            </li>
+            <li class="list-group-item">
+              <span class="badge">21:00-21:30</span><b>Discussions and After-Party</b>
+            </li>
+        </ul> -->
+     </div>	 
+
+</div>  
+
+
+<div class="container">
+    <br>
+    <h3>JUG Events List</h3>
+    <table class="table">
+        <tr>
+            <th class="tabletd30">Date</th>
+            <th class="tabletd30">Event</th>
+            <th class="tabletd40">Slides and Photos</th>
+        </tr>
+
+        <tr>
+            <td>2025-02-20</td>
+            <td><a href="https://kaunas-jug60.eventbrite.com">Meeting #60</a></td>
+            <td>
+                <ul>
+                    <li><a href="javascript:alert('Comming soon...')">ORM are fundamental flawed -- Artūras Šlajus, Principal Engineer/Director of Engineering (UltraHorse Ent)</a></li>
+                    <li><a href="javascript:alert('Comming soon...')">Tests - our best friends -- Ina Bumstein, Senior Consultant, Senior Java Developer at CGI Lithuania</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                </ul>
+            </td>
+        </tr>
+
+        <tr>
+            <td>2024-11-28</td>
+            <td><a href="https://kaunas-jug59.eventbrite.com">Meeting #59</a></td>
+            <td>
+                <ul>
+                    <li><a href="javascript:alert('Comming soon...')">Green Applications - Marytnas Adomavičius, Teamlead of Application development at Festo</a></li>
+                    <li><a href="javascript:alert('Comming soon...')">HTTP 1, 2, 3 - What Why Where? - Pijus Navickas, Go Developer at CAST AI</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                </ul>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>2024-10-24</td>
+            <td><a href="https://kaunas-jug58.eventbrite.com">Meeting #58</a></td>
+            <td>
+                <ul>
+                    <li><a href="javascript:void(0)">MIP solver and Hard problems - Gediminas Morkevičius, Software Engineer and Optimization Scientist at Satalia</a></li>
+                    <li><a href="javascript:void(0)">Typeclasses demystified - Artūras Šlajus, Principal Engineer/Director of Engineering (UltraHorse Ent)</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2024-09-19</td>
+            <td><a href="https://kaunas-jug57.eventbrite.com">Meeting #57</a></td>
+            <td>
+                <ul>
+                    <li><a href="./material/meetup57/kiril-presentation.pdf">Maven: Old but Gold - Kiril Nugmanov, Senior Software Engineer, Java (Rivile)</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=B94FvQbPft8">Scala Full-Stack Development - Artūras Šlajus, Principal Engineer/Director of Engineering (UltraHorse Ent)</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                </ul>
+            </td>
+        </tr>
+
+         <tr>
+            <td>2024-01-18</td>
+                  <td><a href="https://kaunas-jug56.eventbrite.com">Meeting #56</a></td>
+                  <td>
+                    <ul>
+                    <li><a href="javascript:void(0)">Getting the most out of your Java - Kris Foster, Principal Product Manager, GraalVM at Oracle</a></li>
+                    <li><a href="javascript:void(0)">Building Integration Platform with Apache Pulsar - Giedrius Krisciukaitis, Head Of Software Engineering at Ignitis Group</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                   </ul>
+              </td>
+          </tr>
+         <tr>
+            <td>2023-12-07</td>
+                  <td><a href="https://kaunas-jug55.eventbrite.com">Meeting #55</a></td>
+                  <td>
+                    <ul>
+                    <li><a href="javascript:void(0)">Spring Framework: Tips and tricks - Kiril Nugmanov/Fullstack Java Software Engineer (Zenitech)</a></li>
+                    <li><a href="javascript:void(0)">Secrets of the Code Whisperer - Nerijus Eimanavičius/CTO (TeleSoftas)</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                   </ul>
+              </td>
+          </tr>
+          <tr>
+            <td>2023-11-09</td>
+                  <td><a href="https://kaunas-jug54.eventbrite.com">Meeting #54</a></td>
+                  <td>
+                    <ul>
+                    <li><a href="./material/meetup54/Cross-Platform Development with Kotlin Multiplatform.pptx">Unlocking Cross-Platform Development with Kotlin Multiplatform - Martynas Šustavičius/Lead Android Developer (Voltas IT)</a></li>
+                    <li><a href="./material/meetup54/Bye_Passwords_For_Real.pdf">Bye, Passwords. For Real! - Justas Eimutis/Senior Software Engineer (Tide)</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                   </ul>
+              </td>
+          </tr>
+          <tr>
+            <td>2023-03-22</td>
+                  <td><a href="https://kaunas-jug53.eventbrite.com">Meeting #53</a></td>
+                  <td>
+                    <ul>
+                    <li><a href="https://github.com/adamasas/Java_features">Changes in Java from v8 to v19 - Adomas Greičius / Senior Java Developer (Mambu)</a></li>
+                    <li><a href="./material/meetup53/JMH_Cujo_Saulius.pptx">Java Microbenchmark Harness (JMH) - Saulius Tvarijonas / Co-founder, VP Software Development (CUJO AI)</a></li>
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Topics and photos comming soon...</a></li> -->
+                    <!-- <li><a href="javascript:alert('Comming soon...')">Photos</a></li> -->
+                   </ul>
+              </td>
+          </tr>
+          <tr>
+            <td>2020-02-18</td>
+                  <td><a href="https://kaunas-jug52.eventbrite.com">Meeting #52</a></td>
+                  <td>
+                    <ul>
+                    <li>Infrastructure as Software -- Paul Stack / Staff Software Engineer / Pulumi Corporation / (ex-HashiCorp, Engineer)</li>
+                    <li>Securing Your Infrastructure with Vault -- Paul Stack / Staff Software Engineer / Pulumi Corporation / (ex-HashiCorp, Engineer)</li>
+                   </ul>
+              </td>
+          </tr>
+          <tr>
+            <td>2020-01-21</td>
+                  <td><a href="https://kaunas-jug51.eventbrite.com">Meeting #51</a></td>
+                  <td>
+                    <ul>
+                    <li>Architecture of a FoX cave, a hybris story - Sven Brosi / Java Backend Developer / Festo AG&Co. Germany</li>
+                    <li>Changing Nginx Configuration Without Reloading -- Kipras Mancevicius / Principal Software Engineer / Oracle Cloud Infrastructure</li>
+                   </ul>
+              </td>
+          </tr>
+          <tr>
+            <td>2019-12-04</td>
+                  <td><a href="https://kaunas-jug50.eventbrite.com">Meeting #50</a></td>
+                  <td>
+                    <ul>
+                    <li><a href="./material/meetup50/JUG_serverless.pptx">AWS Lambdas - Justas Eimutis / DevBridge</a></li>
+                    <li>Burn-Out Syndrome and Why Should You Take It Seriously - Edgars Letinskis / FrontCon/ DevOpsDays Riga/ Devclub.lv</li>
+                    <li><a href="https://photos.app.goo.gl/LQdXuvVkt5Bv9CKK9">Photos</a></li>
+                   </ul>
+              </td>
+        </tr>
+          <tr>
+            <td>2019-11-07</td>
+                  <td><a href="https://kaunas-jug49.eventbrite.com">Meeting #49</a></td>
+                  <td>
+                    <ul>
+                    <li><a href="https://sizovs.net/beyond-software-craftsmanship/#1">Beyond Software Craftsmanship: From Developer to Architect - Eduards Sizovs / DevTube / DevTernity / DevChampions / LatCraft</a></li>
+                    <li><a href="https://www.slideshare.net/aestasit/yamlware-and-the-state-machine-179032801">Yamlware and the State Machine - Andrey Adamovich / DevTernity / Aestas IT</a></li>
+                    <li><a href="https://photos.app.goo.gl/LtGCKj8y3qj9m56F7">Photos</a></li>
+                   </ul>
+              </td>
+        </tr>
+          <tr>
+            <td>2019-09-19</td>
+                  <td><a href="https://kaunas-jug48.eventbrite.com">Meeting #48</a></td>
+                  <td>
+                    <ul>
+                    <li>How Java developers build a desktop app in 7 days - Andrius Šukys / Juvare</li>
+                    <li><a href="./material/meetup48/Kaunas-JUG-Minimalism-with-Clojure-Sarunas-Navickas.pdf">Minimalism with Clojure - Šarūnas Navickas / TokenMill</a> (<a href="https://github.com/zaibacu/kaunas-jug">Source code</a>)</li>
+                    <li><a href="https://photos.app.goo.gl/XgkbFGUR7CYQ9r8t6">Photos</a></li>
+                   </ul>
+              </td>
+        </tr>   
+
+        <tr>
+            <td>2019-05-16</td>
+                  <td><a href="https://kaunas-jug47.eventbrite.com">Meeting #47</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://bit.ly/2B7K6w6">First date with GraalVM - Pijus Navickas / Wix</a></li>
+                      <li><a href="https://speakerdeck.com/mildag/breaking-language-barriers-with-graalvms-polyglotism">Breaking language barriers with GraalVMs polyglotism - Milda Glebauskaitė / Wix</a></li>
+                      <li><a href="https://speakerdeck.com/laurynaslwix/how-to-use-a-jvm-library-in-node-dot-js">Graal: Using JVM libraries in Node.js - Laurynas Lubys / Wix</a>  (<a href="https://github.com/laurynasl-wix/graal-jvm-interop-talk">Source code</a>)</li>
+                      <!-- <li><a href="javascript:alert('Comming soon...')">Event Photos</a></li></li> -->
+                   </ul>
+              </td>
+        </tr>   
+
+         <tr>
+            <td>2019-04-18</td>
+                  <td><a href="https://kaunas-jug46.eventbrite.com">Meeting #46</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://github.com/Edvinas01/jug-46">Add some ketchup to your back-end, Edvinas Danevičius / Software Developer at CUJO AI</a></li></li>
+                      <li><a href="material/meetup46/JUG46_Faster_testing_with_Kotlin.pptx">Faster testing with Kotlin. Android case, Justinas Krutulis / Android Developer at SpectroCoin</a></li>
+                      <li><a href="https://photos.app.goo.gl/ryuMp6yx7eqqBzUG6">Event Photos</a></li></li>
+                   </ul>
+              </td>
+        </tr>   
+
+         <tr>
+            <td>2019-02-21</td>
+                  <td><a href="https://kaunas-jug45.eventbrite.com">Meeting #45</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="./material/meetup45/JUG45_JUG_Rx_Java.pptx">Intro to RxJava2 by Vaidas Kriščeliūnas, Telesoftas</a></li></li>
+                      <li><a href="./material/meetup45/JUG45_Dagger.pptx">Intro to Dagger2 by Sigitas Atkočaitis, Telesoftas</a></li>
+                      <li><a href="https://photos.app.goo.gl/x7B5PsoXN1vyqZnj9">Event Photos</a></li></li>
+                   </ul>
+              </td>
+        </tr>   
+         <tr>
+            <td>2019-01-24</td>
+                  <td><a href="https://kaunas-jug44.eventbrite.com">Meeting #44</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://www.slideshare.net/Adamsus/kaunas-jug-presentation">Introduction to Oauth 2 (Adomas Greičius, Visma)</a></li></li>
+                      <li><a href="https://gist.github.com/arturaz/9c4e042cc82d391e1f51c1afa5654933">Discussion: Is it worth learning programming languages that you can not use in your day job? (Artūras Šlajus, Project Zero Deaths)</a></li>
+                      <li><a href="https://photos.app.goo.gl/WdXsb4eoRW2rB7TU7">Event Photos</a></li></li>
+                   </ul>
+              </td>
+        </tr>   
+         <tr>
+            <td>2018-11-22</td>
+                  <td><a href="https://kaunas-jug43.eventbrite.com">Meeting #43</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="javascript: alert('Comming soon...')">Web Accessibility</a> by Kęstutis Buitvydas</li></li>
+                      <li><a href="https://www.slideshare.net/secret/LlzDtYDm73G6bS">Learning Redis. Hard Way...</a> by Audrius Bugas</li></li>
+                   </ul>
+              </td>
+        </tr>   
+
+
+         <tr>
+            <td>2018-09-19</td>
+                  <td><a href="https://kaunas-jug42.eventbrite.com">Meeting #42</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://www.slideshare.net/PranasSasnauskas/internet-of-things-116291157">Internet of Things. Chapter 1: Basics</a> by Pranas Sasnauskas</li></li>
+                      <li><a href="https://prezi.com/p/jt_dgbrokmk3/spring-framework-5">Spring Framework 5: A Closer Look</a> (<a href="https://github.com/rootis/jug-topic-2">Code Examples</a>) by Rutenis Turcinas</li></li>
+                   </ul>
+              </td>
+        </tr>   
+
+
+         <tr>
+            <td>2018-06-27</td>
+                  <td><a href="https://kaunas-jug41.eventbrite.com">Meeting #41</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://www.youtube.com/watch?v=me-Nikc5eak">Writing Tests When The Code is Already There: Golden Master Technique</a> by Milda Glebauskaitė</li></li>
+                      <li><a href="https://www.slideshare.net/Kaukole/http2-and-java">HTTP2 and Java</a> by Audrius Mičiulis</li></li>
+                   </ul>
+              </td>
+        </tr>   
+         <tr>
+            <td>2018-04-25</td>
+                  <td><a href="https://kaunas-jug40.eventbrite.com">Meeting #40</a></td>
+                  <td>
+                    <ul>
+                      <li>Photos &middot; <a href="https://photos.app.goo.gl/K2hSgsZsg3PeY9Cq1">Google+</a></li>
+                      <li>Data Science Techniques from Python - Agile Data Experimentation in Java by Leon Kuperman</li>
+                      <li><a href="https://www.slideshare.net/kaunasjug/smart-house-based-on-raspberry-pi-java-ee-by-tadas-brasas">Smart House based on Raspberry Pi + Java EE</a> by Tadas Brasas</li>
+                   </ul>
+              </td>
+        </tr>  
+         <tr>
+            <td>2017-11-14</td>
+                  <td><a href="https://kaunas-jug39.eventbrite.com">Meeting #39</a></td>
+                  <td>
+                    <ul>
+                      <li>-</li>
+                   </ul>
+              </td>
+        </tr>  
+         <tr>
+            <td>2017-10-18</td>
+                  <td><a href="https://kaunas-jug38.eventbrite.com">Meeting #38</a></td>
+                  <td>
+                    <ul>
+                      <li>-</li>
+                   </ul>
+              </td>
+        </tr>  
+         <tr>
+            <td>2017-09-21</td>
+                  <td><a href="https://kaunas-jug37.eventbrite.com">Meeting #37</a></td>
+                  <td>
+                    <ul>
+                      <li>Photos &middot; <a href="https://photos.app.goo.gl/dgRxUX1T7OrwGutf2">Google+</a></li>
+                   </ul>
+              </td>
+        </tr>  
+         <tr>
+            <td>2017-04-20</td>
+                  <td><a href="https://kaunas-jug36.eventbrite.com">Meeting #36</a></td>
+                  <td>
+                    <ul>
+                      <li>Understanding Mocks by Vaidas Pilkauskas</li>
+                   </ul>
+              </td>
+        </tr>  
+        <tr>
+            <td>2017-03-14</td>
+                  <td><a href="https://kaunas-jug35.eventbrite.com">Meeting #35</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://www.slideshare.net/MatasTvarijonas/rebuilding-cloud-adform">reBuilding private cloud @adform</a> by Matas Tvarijonas</li></li>
+                      <li><a href="https://www.slideshare.net/ErnestasVaiciukevici/storm-spaas">Stream Processing as a Service</a> by Ernestas Vaiciukevičius</li></li>
+                   </ul>
+              </td>
+        </tr> 
+        <tr>
+            <td>2017-02-22</td>
+                  <td><a href="https://kaunas-jug34.eventbrite.com">Meeting #34</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://www.slideshare.net/secret/fzOJirb6HdJtAQ">Introduction to Apache Kafka</a> by Saulius Tvarijonas</li></li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2017-01-18</td>
+                  <td><a href="https://kaunas-jug33.eventbrite.com">Meeting #33</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://speakerdeck.com/devopspro/how-we-learned-to-love-the-data-center-operating-system">How we learned to love the Data Center Operating System</a> by Saulius Valatka</li></li>
+                      <li><a href="http://www.slideshare.net/RolandasJaskovikas/zero-downtime-deployment-71219690">Zero downtime deployment techniques and architectures</a> by Rolandas Jaskovikas</li></li>
+                   </ul>
+              </td>
+        </tr> 
+        <tr>
+            <td>2016-11-30</td>
+                  <td><a href="https://kaunas-jug32.eventbrite.com">Meeting #32</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="http://www.slideshare.net/ogrigas/frameworkless-applications">Building a framework-less web app</a> by Osvaldas Grigas</li>
+                   </ul>
+                   
+              </td>
+        </tr> 
+        <tr>
+            <td>2016-10-11</td>
+                  <td><a href="https://kaunas-jug31.eventbrite.com">Meeting #31</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="http://slides.com/nukemberg/jvm-logging-guide#/">Finding a Needle in a Haystack. JVM logging guide</a> by Avishai Ish-Shalom</li>
+                   </ul>
+                   
+              </td>
+        </tr> 
+        <tr>
+            <td>2016-09-15</td>
+                  <td><a href="https://kaunas-jug30.eventbrite.com">Meeting #30</a></td>
+                  <td>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=R9MHcYpYMWM">An Obsessive Compulsive Guide To Clean Tests</a> by Noam Almog</li>
+                   </ul>
+                   
+              </td>
+        </tr> 
+        <tr>
+            <td>2016-08-25</td>
+                  <td><a href="https://kaunas-jug29.eventbrite.com">Meeting #29</a></td>
+                  <td>
+                    <ul>
+                      <li>-</li>
+                   </ul>
+                   
+              </td>
+        </tr>         <tr>
+            <td>2016-07-28</td>
+                  <td><a href="https://kaunas-jug28.eventbrite.com">Meeting #28</a></td>
+                  <td>
+                    <ul>
+                      <li>-</li>
+                   </ul>
+                   
+              </td>
+        </tr> 
+        <tr>
+            <td>2016-06-30</td>
+                  <td><a href="https://kaunas-jug27.eventbrite.com">Meeting #27</a></td>
+                  <td>
+                    <ul>
+                      <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6304675947636202305">Google+</a></li>
+                      <li><a href="http://www.slideshare.net/LaurynasTretjakovas/pracital-application-logging-and-monitoring">Practical Application Logging and Monitoring</a> by Laurynas Tretjakovas</li>
+                      <li><a href="http://www.slideshare.net/valentinbazarevsky/realtime-analytics-63700292">Multi-dimensional probabilistic real-time analytics at Scale</a> by Valentin Bazarevsky</li>
+                   </ul>
+                   
+              </td>
+        </tr> 
+
+        <tr>
+            <td>2016-05-25</td>
+                  <td><a href="https://kaunas-jug26.eventbrite.com">Meeting #26</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="https://speakerdeck.com/vorago/painless-microservice-development">Painless microservice development with Vagrant, Ansible and Nginx</a> by Andrew Naydyonock</li>
+                      <li><a href="https://speakerdeck.com/fylmtm/league-of-graphs-slash-w-neo4j">League of Graphs with Neo4J</a> by Dmitry Vrublevsky</li>
+                      <li><a href="https://speakerdeck.com/larchaon/testing-restful-services-the-what-the-how-and-the-automated">Testing RESTful services: The What, The How and The Automated</a> by Alexey Buzdin</li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2016-04-20</td>
+                  <td><a href="https://kaunas-jug25.eventbrite.com">Meeting #25</a></td>
+                  <td>
+                    <ul>
+                      <li><a href="http://donatasm.github.io/scala-in-practice">Scala in practice</a> by Donatas Mažionis</li>
+                      <li><a href="http://www.slideshare.net/giedriuskri/load-testing-with-jmeter-blazemeter-new-relic">Measuring performance with JMeter, BlazeMeter, New Relic. Hands on session</a> by Giedrius Kriščiukaitis</li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2016-01-20</td>
+                  <td><a href="https://kaunas-jug24.eventbrite.com">Meeting #24</a></td>
+                 <td>
+                    <ul>
+                     <li> <a href="http://www.slideshare.net/kaunasjug/servicebridge-azure-to-aws-by-audrius-ziemelis">True story: product migration from Azure to AWS</a> by Audrius Žiemelis</li>
+                     <li><a href="http://www.slideshare.net/AndriusDapeviius/machine-learning-with-accord-framework">Machine learning with Accord framework </a> by Andrius Dapševičius</li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2015-12-16</td>
+                  <td><a href="https://kaunas-jug23.eventbrite.com">Meeting #23</a></td>
+                 <td>
+                    <ul>
+                     <li> <a href="http://www.slideshare.net/AndriusKlimavicius/introduction-to-kotlin-jvm-language">An Introduction to Kotlin JVM language</a> by Andrius Klimavičius</li>
+                     <li><a href="http://www.slideshare.net/AidasDragnas/continuous-db-changes-delivery-with-liquibase">Continuous DB Changes Delivery With Liquibase </a> by Aidas Dragūnas</li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2015-11-18</td>
+                  <td><a href="https://kaunas-jug22.eventbrite.com">Meeting #22</a></td>
+                 <td>
+                    <ul>
+                         <li>-</li>
+                      </li>
+                   </ul>
+              </td>
+        </tr>
+      
+        <tr>
+            <td>2015-10-21</td>
+                  <td><a href="https://kaunas-jug21.eventbrite.com">Meeting #21</a></td>
+                 <td>
+                    <ul>
+                     <li> <a href="http://www.slideshare.net/ogrigas/living-withoutobjects">Transition from OO to Functional Design - with Clojure </a> by Osvaldas Grigas</li>
+                     <li><a href="http://www.slideshare.net/VaidasPilkauskas1/can-you-trust-your-tests-agile-tour-2015-kaunas"> Can You Trust Your Tests? </a> by Vaidas Pilkauskas</li>
+                      <li>Photos &middot; <a href="https://pbs.twimg.com/media/CR3DAm5UsAAcEo1.jpg:large">Twitter</a> &middot;
+                      <a href="https://plus.google.com/photos/+KaunasJUG/albums/6210092428517119777">Google+</a></li>
+                   </ul>
+             </td>
+        </tr>
+        <tr>
+            <td>2015-09-17</td>
+                  <td><a href="https://kaunas-jug20.eventbrite.com">Meeting #20</a></td>
+                 <td>
+                    <ul>
+                         <li>Slides &middot; <a href="http://www.slideshare.net/MarcinGrzejszczak/4financeit-microservices-092015-kaunas-jug">Microservices at 4financeIT</a> by Marcin Grzejszczak (selfie <a href="https://twitter.com/MGrzejszczak/status/644577385250205700">Marcin and crowd</a>)</li>
+                      </li>
+                      <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6204864365648885697">JUG Google+</a></li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2015-08-19</td>
+                  <td><a href="https://kaunas-jug19.eventbrite.com">Meeting #19</a></td>
+                 <td>
+                    <ul>
+            <li><b>-<!--Slides and photos will be placed soon--></b></li>
+                   </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2015-07-15</td>
+                  <td><a href="https://kaunas-jug18.eventbrite.com">Meeting #18</a></td>
+                 <td>
+                    <ul>
+                         <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6173329364158767729">JUG Google+</a></li>
+                     </ul>
+              </td>
+        </tr>
+       <tr>
+            <td>2015-06-17</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-17-tickets-17143209802">Meeting #17</a></td>
+                 <td>
+                      <ul><li>-</li></ul> 
+              </td>
+        </tr>
+
+       <tr>
+            <td>2015-05-20</td>
+                  <td><a href="http://www.eventbrite.com/e/kaunas-jug-meeting-16-tickets-16622817294">Meeting #16</a></td>
+                 <td>
+                      <ul>
+                         <li>Slides &middot; <a href="https://www.slideshare.net/secret/FouSE3Q9zqxig8">Karaf - When OSGi Modularity meets Java world </a> by Justinas Šlekas</li>
+                         <li>Slides &middot; <a href="http://www.slideshare.net/RutenisTurcinas/type-script-48643857">TypeScript: Silver Bullet for the Full-stack Developers </a> by Rutenis Turcinas  </li>
+                      <!--   <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6073865229544707905">JUG Google+</a></li>-->
+                     </ul> 
+
+              </td>
+        </tr>
+
+
+        <tr>
+            <td>2015-04-16</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-15-tickets-16241477697">Meeting #15</a></td>
+                 <td>
+                      <ul>
+                         <li>Slides &middot; <a href="http://www.scalapeno.org.il/#!orr-sella/czmu">True End-to-End Testing in Scala</a> by Orr Sella</li>
+                         <li>Slides &middot; <a href="https://speakerdeck.com/mmozuras/b-testing-evolution">A/B Testing Evolution</a> by Mindaugas Mozūras</li>
+                        <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6204878296204745889">JUG Google+</a></li>
+                      <!--   <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6073865229544707905">JUG Google+</a></li>-->
+                     </ul> 
+
+              </td>
+        </tr>
+        <tr>
+           <td>2015-03-18</td>
+           <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-14-tickets-15871189154">Meeting #14</a></td>
+           <td>
+                   <ul>
+                     <li>   <a href="https://www.slideshare.net/secret/Jy2xxBR43X5emg"> Apache Camel: Swiss knife of Integrations </a> by Justinas Šlekas <a href="https://github.com/mygnr/camel-demo">Git </a> </li>
+                     <li>   <a href="http://slides.com/arturasslajus/quest-for-composable-immutable-objects#/"> Quest for composable immutable objects </a> by Artūras Šlajus</li>
+					 <!-- <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6119466829435824513">JUG Google+</a></li> -->
+                   </ul>
+           </td>
+        </tr>
+
+        <tr>
+           <td>2015-02-18</td>
+           <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-13-tickets-15488751272">Meeting #13</a></td>
+           <td>
+                   <ul>
+                     <li>   <a href="http://www.slideshare.net/Kaukole/spring-data-jpa-44961257"> Spring Data JPA: Easy Way to Query Database without SQL </a> by Audrius Mičiulis  <a href="https://github.com/kaukole/Spring-Data-JPA">Git </a> </li>
+					 <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6119466829435824513">JUG Google+</a></li>
+                   </ul>
+           </td>
+        </tr>
+
+        <tr>
+            <td>2015-01-21</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-12-tickets-15308257440">Meeting #12</a></td>
+                 <td>
+                     <ul>
+                        <li>   <a href="http://www.slideshare.net/Kaukole/xsffo"> Creating PDF documents with XSL-FO </a> by Audrius Mičiulis  <a href="https://github.com/kaukole/PDFGenerator">Git </a> </li>
+                        <li> Agentless Automation by Matt Trisoline</li>
+                     </ul>
+                     <!--
+						<li><b>Slides and photos will be placed soon</b></li>
+                   </ul> -->
+              </td>
+        </tr>
+
+
+        <tr>
+            <td>2014-12-17</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-11-tickets-14555418649">Meeting #11</a></td>
+                 <td>
+                    <ul>
+                         <li>Slides &middot; <a href="/material/slava_presentation/index.html">How we use Scala</a> by Viačeslav Pozdniakov</li>
+                         <!-- <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6092052125230245969">JUG Google+</a></li> -->
+                     </ul>
+              </td>
+        </tr>
+        <tr>
+            <td>2014-11-19</td>
+                  <td><a href="http://www.eventbrite.com/e/kaunas-jug-meeting-10-tickets-13794488687">Meeting #10</a></td>
+
+                 <td>
+                    <ul>
+                         <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/automated-infrastructure">Automated Infrastructure with Vagrant, Puppet and Docker</a> by Laurynas Tretjakovas</li>
+                         <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/presentation-41902731">Git Plumbing</a> by Eimantas Vaičiūnas</li>
+                         <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6092052125230245969">JUG Google+</a></li>
+                     </ul>
+              </td>
+        </tr>
+
+        <tr>
+            <td>2014-10-15</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-9-tickets-13252991053">Meeting #9</a></td>
+                 <td>
+                    <ul>
+                         <li>Slides &middot; <a href="http://www.slideshare.net/vilniusjug/developer-test-kaunas-jug-english">Developer Tests - Things to Know</a> by Vaidas Pilkauskas</li>
+                         <li>Slides &middot; <a href="https://drive.google.com/file/d/0B2IHKP9sKCKvNHJ1blZZSHU2aGc/view?usp=sharing">Introduction to the Oracle Application Development Framework (ADF)</a> by Danas Tarnauskas</li>
+                         <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6073865229544707905">JUG Google+</a></li>
+                     </ul> 
+              </td>
+        </tr>
+
+
+        <tr>
+              <td>2014-09-17</td>
+              <td><a href=http://www.eventbrite.com/e/kaunas-jug-meeting-8-tickets-12327831877">Meeting #8</a></td>
+              <td>
+                <ul>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/Adamsus/mockito-39395918">  Mockito simpler & better mocking </a> by Adomas Greičius <a href="https://github.com/adamasas/mockito.git">Git </a> <!--<a href="https://github.com/adamasas/mockito.git>git</a>--> </li>
+                    <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6073861237785427217">JUG Google+</a></li>
+                </ul>
+              </td>
+         </tr>
+
+        <tr>
+            <td>2014-08-20</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-7-tickets-12330032459">Meeting #7</a></td>
+                 <td>
+                    <ul>
+                        <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/building-with-gradle-laurynastretjekovas">Building with Gradle</a> by Laurynas Tretjakovas</li>
+                        <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/bye-bye-cowboy-coder-days">Bye Bye Cowboy-Coder days! (Working Effectively with Legacy Code)</a> by Vytautas Dagilis</li>
+                        <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6050107478366101297">JUG Google+</a></li>
+                     </ul>
+              </td>
+        </tr>
+
+        <tr>
+            <td>2014-07-16</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-6-tickets-12036470407">Meeting #6</a></td>
+                 <td>
+                    <ul>
+                        <li>Slides &middot;  <a href="http://www.slideshare.net/kaunasjug/flyway-37147905">Flyway: The agile database migration framework for Java</a> by Saulius Tvarijonas</li>
+                        <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6042336548527737569">JUG Google+</a></li>
+                     </ul>
+              </td>
+        </tr>
+
+        <tr>
+            <td>2014-06-18</td>
+                  <td><a href="https://www.eventbrite.com/e/kaunas-jug-susitikimas-5-tickets-11729734953">Meeting #5</a></td>
+                 <td>
+                    <ul>
+                        <li>Slides &middot;  <a href="http://www.slideshare.net/Adamsus/impression-from-2014">Impressions from Geecon</a> by Adomas&nbsp;Greičius&nbsp;and&nbsp;Vytautas&nbsp;Dagilis </li>
+                        <li>Slides &middot;  <!--<a href="http://www.slideshare.net/kaunasjug/eh-cache">-->Code quality improvement and management with SonarQube <!--</a>--> by Tautvydas&nbsp;Liepa</li>
+                        <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6031541109823692913">JUG Google+</a></li>
+                    </ul>
+              </td>
+        </tr>
+        <tr>
+           <td>2014-05-21</td>
+                    <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-4-tickets-11338504773">Meeting #4</a></td>
+                    <td>
+                        <ul>
+                    <!--        <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/lucene-presentation-vjug">Informacijos paieška</a> by  Mindaugas&nbsp;&#x017D;akšauskas (src: <a href="https://bitbucket.org/kaunas_jug/lucene_demo.git">Git</a>) </li>-->
+                              <li>Slides &middot;  <a href="http://www.slideshare.net/kaunasjug/eh-cache"> EhCache</a> by Saulius&nbsp;Tvarijonas </li>
+                            <li>Slides &middot; Intro to Scala by Artūras&nbsp;Šlajus   (src: <a href="https://github.com/arturaz/introduction-to-scala.git">Git</a>) </li>
+                            <li>Photos &middot; <a href="https://plus.google.com/photos/+KaunasJUG/albums/6031527759556669985">JUG Google+</a></li>
+                        </ul>
+           </td>
+        </tr>
+        <tr>
+            <td>2014-04-16</td>
+            <td><a href="https://www.eventbrite.com/e/kaunas-jug-meeting-3-tickets-11016601953">Meeting #3</a></td>
+            <td>
+                <ul>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/lucene-presentation-vjug">Informacijos paieška</a> by  Mindaugas&nbsp;&#x017D;akšauskas (src: <a href="https://bitbucket.org/kaunas_jug/lucene_demo.git">Git</a>) </li>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/java-8-stream-api-valdas-zigas">Java 8 Stream API</a> by Valdas&nbsp;&#x017D;igas
+                        (src: <a href="https://github.com/valdasz/kaunasjug3streamapi">Git</a>) </li>
+                    <li>Photos &middot; <a href="https://picasaweb.google.com/105734817958863254662/KaunasJUG3">JUG Google+</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2014-03-19</td>
+            <td><a href="http://www.eventbrite.com/e/kaunas-jug-meeting-2-tickets-10695483479">Meeting #2</a></td>
+            <td>
+                <ul>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/kaunas-jug2-status-valdas-zigas">Kaunas JUG #2. Status</a> by Valdas&nbsp;&#x017D;igas</li>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/intro-to-java-8-closures-dainius-mezanskas">Intro to Java 8 Closures</a> by Dainius&nbsp;Me&#x017E;anskas</li>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/devoxx-2013bysauliustvarijonas">Devoxx 2013</a> by Saulius&nbsp;Tvarijonas</li>
+                    <li>Slides &middot; <a href="http://slid.es/arturasslajus/concurrency-and-parallelism">Concurrency &amp; Parallelism: what is it and how to deal with it</a> by Artūras&nbsp;Šlajus</li>
+                    <li>Photos &middot; <a href="https://picasaweb.google.com/105734817958863254662/KaunasJUG2">JUG Google+</a></li>
+                    <li>Photos &middot; <a href="https://www.facebook.com/media/set/?set=a.474995352527230.1073741851.114618671998235&amp;type=1">StratupSpace FB</a></li>
+                </ul>
+            </td>
+            <!-- https://www.facebook.com/media/set/?set=a.474995352527230.1073741851.114618671998235&type=1 -->
+        </tr>
+        <tr>
+            <td>2014-02-19</td>
+            <td><a href="http://www.eventbrite.com/e/kaunas-jug-meeting-1-tickets-10586752251">Meeting #1</a></td>
+            <td><!--a href="http://www.eventbrite.com/e/kaunas-jug-meeting-1-tickets-10586752251">Eventbrite</a -->
+                <ul>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/kaunas-jugintrobyvzigas">Kaunas JUG. Intro</a> by Valdas&nbsp;&#x017D;igas</li>
+                    <li>Slides &middot; <a href="http://www.slideshare.net/kaunasjug/devoxx-2013bysauliustvarijonas">Java. History &amp; Trends</a> by Dainius&nbsp;Me&#x017E;anskas</li>
+                    <li>Photos &middot; <a href="https://picasaweb.google.com/105734817958863254662/KaunasJUG1">JUG Google+</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>2014-02-07</td>
+            <td>Pre-meeting</td>
+            <td>-</td>
+        </tr>
+    </table>
+        
+    <hr>
+      
+
+      <div class="row">
+        <div class="col-sm-6 header">
+           &copy; 2014-<?=date("Y")?> Kaunas JUG &middot; <a href="mailto:kaunas.jug@gmail.com">kaunas.jug@gmail.com</a>
+        </div>
+        <div class="col-sm-2 header">
+          Saulius Tvarijonas <a href="https://lt.linkedin.com/in/sauliust"><img src="img/linkedin_icon.png" alt="Saulius Tvarijonas LinkedIn Profile"></a>
+        </div>
+        <div class="col-sm-2 header">
+          Adomas Greičius <a href="https://www.linkedin.com/in/adomasgreicius"><img src="img/linkedin_icon.png" alt="Adomas Greičius LinkedIn Profile"></a>
+        </div>
+        <div class="col-sm-2 header">
+          Dainius Mežanskas <a href="https://www.linkedin.com/in/dainiusmezanskas"><img src="img/linkedin_icon.png" alt="Dainius Mezanskas LinkedIn Profile"></a>
+        </div>
+      </div>
+
+    </div>
+   </div>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- CAFE BABE -->
+</body>
+</html>

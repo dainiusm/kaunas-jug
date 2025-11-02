@@ -1,0 +1,58 @@
+body {
+  padding-top: 50px;
+}
+
+.header {
+  text-align: center;
+}
+
+.body {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+.tabletd30 {
+    width: 30%;
+}
+
+.tabletd40 {
+    width: 40%;
+}
+
+.innercenter {
+    display: table;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-image:url('../img/juglogo150.png');
+    background-color: white;
+    -moz-border-radius: 75px;
+    border-radius: 75px;
+}
+
+.list-shift-right {
+    padding-left: 30px;
+}
+
+.reddy {
+    border: 1px solid red;
+}
+
+.row-valign {
+  font-size: 0;
+}
+
+.row-valign > [class*="col"] {
+  display: inline-block;
+  float: none;
+  font-size: 14px;
+  font-size: 1rem;
+  vertical-align: middle;
+}

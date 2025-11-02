@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>How we use Scala</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif';
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      }
+      li p { line-height: 1.5em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2:last-of-type, .left-column h3:last-child {
+        color: #000;
+      }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+layout: true
+class: center, middle
+---
+# How we use Scala
+.footnote[Viačeslav Pozdniakov, Adform]
+
+---
+layout: false
+# I this talk I will...
+.left-column[
+  ## ...speak about DCO
+]
+.right-column[
+
+- What is that
+
+- Why this might be called "Big Data"
+
+- Challenges we have
+
+- The way we solve them
+
+]
+---
+layout: false
+# I this talk I will...
+.left-column[
+  ## ...speak about DCO
+  ## ...not speak about _all_ Scala we have
+]
+.right-column[
+
+- Spark
+
+- Scalding
+
+- Scalaz-stream
+
+- ... any other cool stuff
+
+]
+
+---
+# DCO
+.left-column[
+  ## Reference
+]
+.right-column[
+
+- Dynamic creative optimization 
+
+- _or_
+
+]
+
+---
+# DCO
+.left-column[
+  ## Reference
+]
+.right-column[
+
+- Dynamic creative optimization 
+
+- _or_ Dynamic content optimization 
+
+]
+---
+# DCO
+.left-column[
+  ## Reference
+  ## Which means
+]
+.right-column[
+
+We are optimizing a content of banners especially for you based on what we know about you.
+
+There are many retargetting models.
+]
+
+---
+# DCO
+.left-column[
+  ## Reference
+  ## Which means
+  ## We work with
+]
+.right-column[
+
+Two things only:
+
+- Data about everyone we have ever met (profile)
+
+- Products all these good people might be interested in
+
+]
+---
+# DCO
+.left-column[
+  ## Reference
+  ## Which means
+  ## We work with
+]
+.right-column[
+
+Two things only:
+
+- Data about everyone we have ever met (profile)
+
+- Products all these good people might be interested in
+
+So, we are not evil :)
+
+]
+---
+# DCO
+.left-column[
+  ## Reference
+  ## Which means
+  ## We work with
+  ## Requirements
+]
+.right-column[
+
+- highly available
+
+- scalable
+
+- XX 000 qps
+
+- < 100 ms 99% for very critical api
+
+- < 200 ms 99% for other apis but we are working on that :)
+]
+---
+# Storage
+.left-column[
+  ## Cassandra
+]
+.right-column[
+
+For users' profiles.
+
+- _A lot_ of data
+
+- Fast access
+
+- Clustered
+
+- Monitoring
+
+- Great CQL drivers
+
+- Runs on any hardware
+
+]
+---
+# Storage
+.left-column[
+  ## Cassandra
+  ## Redis
+]
+.right-column[
+
+For products.
+
+- Not that much data
+
+- Operations on sets: intersections, diffs
+
+- Very fast
+
+- Written in C
+
+- Master &ndash; slave (sentinels)
+
+- _but_
+
+]
+---
+# Storage
+.left-column[
+  ## Cassandra
+  ## Redis
+]
+.right-column[
+
+For products.
+
+- Not that much data
+
+- Operations on sets: intersections, diffs
+
+- Very fast
+
+- Written in C
+
+- Master &ndash; slave (sentinels)
+
+- _but_ choosy, requires a lot of tuning before giving awesome results
+
+]
+---
+# Philosophy
+.left-column[
+  ## Definition
+]
+.right-column[
+
+From the source of all my knowledge &mdash; Wikipedia:
+
+In computer science, functional programming is
+a programming paradigm, a style of building
+the structure and elements of computer programs,
+that treats computation as the evaluation of
+mathematical functions and avoids changing state and
+mutable data.
+
+]
+---
+# Philosophy
+.left-column[
+  ## Definition
+]
+.right-column[
+
+From the source of all my knowledge &mdash; Wikipedia:
+
+In computer science, functional programming is
+a programming paradigm, a style of building
+the structure and elements of computer programs,
+that treats computation as the evaluation of
+mathematical functions and __avoids__ changing state and
+mutable data.
+
+]
+---
+# Philosophy
+.left-column[
+  ## Definition
+  ## In practice
+]
+.right-column[
+
+```{.scala}
+def executeRedisPoolAsync[T](jedisPool: Pool[Jedis],
+  statement: Jedis => T): Future[T] = {
+    def run(): (Jedis, Try[T]) = {
+      val connection = jedisPool.getResource
+      (connection, Try(statement(connection)))
+    }
+    futurePool.apply(run()).map {
+      case (jedis, Success(result)) =>
+        jedisPool.returnResource(jedis)
+        result
+      case (jedis, Failure(t)) =>
+        jedisPool.returnBrokenResource(jedis)
+        throw t
+    }
+  }
+
+```
+"Oh, it is like OOP code!"
+
+]
+---
+# Stuff
+.left-column[
+  ## We code
+]
+.right-column[
+
+- Twitter's Finagle
+
+- Twitter's futures
+
+- Cassandra Datastax Java drivers (Google's futures)
+
+- Redis Java drivers
+
+- Akka and Spray
+]
+---
+# Stuff
+.left-column[
+  ## We code
+  ## We test
+]
+.right-column[
+
+- Scalatest
+
+- Mockito
+
+- ScalaCheck
+
+- JUnit (as a launcher)
+]
+---
+# Stuff
+.left-column[
+  ## We code
+  ## We test
+  ## We build &amp; release
+]
+.right-column[
+
+- Maven, just because TeamCity understands it well
+
+- We have a single Java file (which maybe eventually will go to Jedis)
+
+- We release a few times per day if needed
+]
+---
+# Finagle
+.left-column[
+  ## Pure
+]
+.right-column[
+Your server is a function:
+```{.scala}
+(Request => Future[Response])
+```
+Which might have a filter:
+```{.scala}
+((Request, Service[Request, Response]) => Future[Response])
+```
+Read "Your Server as a Function" paper for reasoning.
+]
+---
+# Finagle
+.left-column[
+  ## Pure
+  ## Awesome
+]
+.right-column[
+Why so awesome?
+
+```{.scala}
+test("delete profile") {
+  val service = mock[Service]
+  service.deleteProfile(123456789) returns Future()
+  val resource = new ProfileResource(service)
+
+  val request = Request(DELETE, "/?c=123456789&s=123")
+
+  val response = Response(Await.result(resource(request)))
+
+  response.status should equal (OK)
+  verify(service).deleteProfile(123456789)
+}
+```
+]
+---
+# Non-blocking at all
+.left-column[
+  ## Async
+]
+.right-column[
+All internals must be asynchronous:
+
+```{.scala}
+for {
+  defaultProducts <- getDefaultProducts(t)
+  recommendations <- getRecommendationsOrDefault(t, p, defaultProducts, count)
+  metadata <- getMetadata(t, recommendations.take(pageSize))
+} yield new EshopRecommendedProducts(recommendations, metadata)
+
+```
+Imagine this code in Java, C# or even F# ;)
+]
+---
+# Non-blocking at all
+.left-column[
+  ## Async
+  ## Not async
+]
+.right-column[
+
+But not all drivers a non-blocking. We have Redis, remember? ;)
+
+- Redis is multiplexing, like Node.js
+
+- Most drivers are blocking
+
+- Even the best ones, like Jedis
+
+Glueing up async thing is easy. But mixing async and sync code is a nightmare.
+]
+---
+# Non-blocking at all
+.left-column[
+  ## Async
+  ## Not async
+  ## Beware
+]
+.right-column[
+Twitter Futures
+
+```{.scala}
+def apply[T](f: => T): Future[T]
+```
+- Are pure (not poluted by execution context)
+
+- Signature is very promising
+
+- But easy to missuse
+
+Twitter's Future pool saves the day:
+```{.scala}
+val futurePool: ExecutorServiceFuturePool =
+  FuturePool.unboundedPool
+val result: Future[Long] =
+  futurePool(jedisPool.getResource.scard("key"))
+```
+]
+---
+# ScalaCheck
+.left-column[
+  ## It's hard
+]
+.right-column[
+
+- Writing property tests is easy for mappers only
+
+- Property testing of business logics is difficult
+
+- Especially with multiple parameters
+]
+---
+# ScalaCheck
+.left-column[
+  ## It's hard
+  ## Fail much
+]
+.right-column[
+No! It is not _just_ difficult. Sometimes it:
+
+  - makes you hopeless
+
+  - and depressed
+
+We have already rewritten our ScalaCheck tests for 3 times because of a very high entry level.
+]
+---
+# ScalaCheck
+.left-column[
+  ## It's hard
+  ## Fail much
+]
+.right-column[
+No! It is not _just_ difficult. Sometimes it:
+
+  - makes you hopeless
+
+  - and depressed
+
+We have already rewritten our ScalaCheck tests for 3 times because of a very high entry level.
+
+I know I work for a great company ;)
+]
+---
+# ScalaCheck
+.left-column[
+  ## It's hard
+  ## Fail much
+  ## Be rewarded
+]
+.right-column[
+
+- Catches almost all corner cases
+
+- And not only corner cases
+
+]
+---
+# ScalaCheck
+.left-column[
+  ## It's hard
+  ## Fail much
+  ## Be rewarded
+]
+.right-column[
+
+- Catches almost all corner cases
+
+- And not only corner cases
+
+- Finally, tests say how a code works:
+
+```{.scala}
+testCaseWithResult => {
+  val recommendedIds = testCaseWithResult.products.ids
+  recommendedIds should equal(recommendedIds.distinct)
+}```
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+]
+.right-column[
+We use it as a server side for XML upload
+
+- Huge files (gigabytes, potentialy unlimited)
+
+- Chunked upload
+
+- Applies business logics
+
+- And, _once again_
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+]
+.right-column[
+We use it as a server side for XML upload
+
+- Huge files (gigabytes, potentialy unlimited)
+
+- Chunked upload
+
+- Applies business logics
+
+- And, _once again_, non-blocking
+
+- So we can:
+
+  - Process data while it is being uploaded 
+  
+  - Use back-pressure
+
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+  ## Chunks
+]
+.right-column[
+
+"Transfer-Encoding: chunked"
+
+```{.xml}
+<root
+```
+```{.xml}
+>
+  <tag>
+    <data 
+```
+```{.xml}
+a="d"/>
+  </tag>
+```
+```{.xml}
+</root>
+```
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+  ## Chunks
+  ## Pull parse
+]
+.right-column[
+Current situation:
+
+- There are a lot of pull-parsers for jvm
+
+- But almost all of them are blocking:
+
+  - You subscribe to events (which seems to be asynchronous behaviour)
+
+  - _But_,
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+  ## Chunks
+  ## Pull parse
+]
+.right-column[
+Current situation:
+
+- There are a lot of pull-parsers for jvm
+
+- But almost all of them are blocking:
+
+  - You subscribe to events (which seems to be asynchronous behaviour)
+
+  - _But_, source of data is blocking: InputStream, File, ... &mdash; current thread blocks if no data available.
+
+- The second issue: we cannot say "Stop" to incomming data. 
+
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+  ## Chunks
+  ## Pull parse
+  ## Aalto
+]
+.right-column[
+Aalto parser (half a year ago) was the only stax parser in jvm world which can be used in non-blocking xml parsing.
+
+Asynchronousness is achieved by:
+
+- Method _feedInput_ providing an array of newly available data
+
+- Parse event EVENT_INCOMPLETE, signaling that it is not enough data for parser at the moment
+]
+---
+# Spray.io
+.left-column[
+  ## Upload
+  ## Chunks
+  ## Pull parse
+  ## Aalto
+  ## Too stateful
+]
+.right-column[
+
+Parser can be:
+- Not yet parsing
+
+- Parsing (consuming pull events)
+
+- Failed (illegal xml)
+
+- Waiting for input
+
+- Everything is parsed
+
+Data (chunks):
+
+- Arriving
+
+- Temporary stopped
+
+- Permanently stopped
+
+]
+---
+# Akka
+.left-column[
+  ## Rule
+]
+.right-column[
+
+Rule of thumb:
+
+- If you have a lot of states &mdash; use actor model.
+
+- If app is not too stateful &mdash; you do not need actors
+
+]
+---
+# Akka
+.left-column[
+  ## Rule
+  ## Advise
+]
+.right-column[
+
+Akka does not eliminate states, it just makes it easier to handle
+
+- Use Finite State Machine
+
+- Or become/unbecome
+
+]
+---
+# Akka
+.left-column[
+  ## Rule
+  ## Advise
+  ## Transitions
+]
+.right-column[
+
+If you are waiting for chunk, and:
+
+- Get new chunk, then collect it
+
+- Get a flag of last chunk, then go to finite state
+
+- Get a flag that a parser needs more data, then go to starvation state
+
+```{.scala}
+private def receivingChunksState(): Receive = {
+  case m: MessageChunk =>
+    bytes = bytes ++ m.data.toByteString
+  case ChunkedMessageEnd =>
+    context.become(noMoreChunks)
+  case MoreDataNeeded =>
+    if (bytes.nonEmpty) feedAll()
+    else context.become(starving, discardOld = false)
+}
+```
+]
+---
+# Akka
+.left-column[
+  ## Rule
+  ## Advise
+  ## Transitions
+]
+.right-column[
+If you are in starvation state, and:
+
+- Get new chunk, then send it to parser and get back to previous state
+
+- Get a flag of last chunk, then signal a parser and got to finite state
+
+```{.scala}
+private def starvingState(): Receive = {
+  case m: MessageChunk =>
+    parser ! FeedData(m.data.toByteString)
+    context.unbecome()
+  case ChunkedMessageEnd =>
+    parser ! NoMoreDataAvailable
+    context.become(finalizing)
+}
+```
+]
+---
+# Akka
+.left-column[
+  ## Rule
+  ## Advise
+  ## Transitions
+  ## Back-pressure
+]
+.right-column[
+
+I still do not know what is more complicated:
+
+- Back-pressure
+]
+---
+# Akka
+.left-column[
+  ## Rule
+  ## Advise
+  ## Transitions
+  ## Back-pressure
+]
+.right-column[
+
+I still do not know what is more complicated:
+
+- Back-pressure
+
+- _or_ ScalaCheck ;)
+
+Too complicated &mdash; we do not use it.
+]
+---
+# Oh, you use Scala?
+.left-column[
+  ## Slow?
+]
+.right-column[
+
+- How slow?
+
+- Any benefits?
+
+]
+---
+# Oh, you use Scala?
+.left-column[
+  ## Slow?
+  ## What helps
+]
+.right-column[
+
+Last optimizations _really_ helped:
+
+- Direct call to Cassandra nodes
+
+- Raw data instead of json to save traffic
+
+- Redis persistence on slave
+
+- Calculate hashes: do not write if you can
+
+- Heavy calculations (i.e. set diffs) on slaves
+
+]
+---
+# Oh, you use Scala?
+.left-column[
+  ## Slow?
+  ## What helps
+  ## So what?
+]
+.right-column[
+
+Scala stays Scala:
+
+- No reasons to use mutable data structures
+
+- No need to write Java-style code
+
+- ... all major optimizations are not language related.
+]
+---
+# Oh, you use Scala?
+.left-column[
+  ## Slow?
+  ## What helps
+  ## So what?
+  ## Why?
+]
+.right-column[
+- It earns money
+
+- Is is already mature
+
+- It is just a-better-java
+
+]
+---
+# Oh, you use Scala?
+.left-column[
+  ## Slow?
+  ## What helps
+  ## So what?
+  ## Why?
+  ## Fans?
+]
+.right-column[
+
+No. We also have (in our team):
+
+- Python
+
+- Javascript / Node.js
+
+- Bash (curl - xsltproc - curl)
+
+- C# (still)
+
+- Java libraries, if they are good
+
+- And even Haskell 
+]
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+- Mixing sync and async code is difficult, avoid it
+
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+- Mixing sync and async code is difficult, avoid it
+
+- Be explicit
+
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+- Mixing sync and async code is difficult, avoid it
+
+- Be explicit
+
+- Give QuickCheck a try
+
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+- Mixing sync and async code is difficult, avoid it
+
+- Be explicit
+
+- Give QuickCheck a try
+
+- You might need Akka only if you have state
+
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+- Mixing sync and async code is difficult, avoid it
+
+- Be explicit
+
+- Give QuickCheck a try
+
+- You might need Akka only if you have state
+
+- Back-pressure is not trivial
+
+---
+# Takeaways
+
+- You do not need to understand Monads to use them
+
+- Mixing sync and async code is difficult, avoid it
+
+- Be explicit
+
+- Give QuickCheck a try
+
+- You might need Akka only if you have state
+
+- Back-pressure is not trivial
+
+- Your language is not slow, your algorithms are
+
+---
+layout: true
+class: center, middle
+
+# Thank you!
+
+## @poznia
+
+## http://github.com/vipo/how_we_use_scala
+
+---
+    </textarea>
+    <script src="remark-latest.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
