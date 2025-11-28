@@ -227,7 +227,7 @@
     <p>&nbsp;</p>
   
   <!-- ACTIVATE JUMBOTRON ONLY ON EVENT TICKET SALE 'display: block', otherwise 'display: none' -->
-	<div class="jumbotron" style="display: block;">
+	<div class="jumbotron" style="display: none;">
     <div class="row">
           <div class="col-md-12">
                <!-- <h3 style="text-align: center;">Grab your <a href="https://kaunas-jug61.eventbrite.com/">ticket here!</a></h3> -->
@@ -247,7 +247,7 @@
         <!-- EVENTBRITE JUMBO -->
         <!-- ======================================================================================== -->
         
-            <div id="eventbrite-widget-container-1974743014515"></div>
+            <!-- <div id="eventbrite-widget-container-1974743014515"></div>
 
             <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -266,7 +266,7 @@
                     iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
                     onOrderComplete: exampleCallback  // Method called when an order has successfully completed
                 });
-            </script>
+            </script> -->
 
         <!-- ======================================================================================== -->
         <!-- EVENTBRITE JUMBO -->
@@ -985,11 +985,9 @@
     </table>
         
     <hr>
-      
-
       <div class="row">
         <div class="col-sm-6 header">
-           &copy; 2014-2026 Kaunas JUG &middot; <a href="mailto:kaunas.jug@gmail.com">kaunas.jug@gmail.com</a>
+           &copy; 2014-<span id="current-year">2027</span> Kaunas JUG &middot; <a href="mailto:kaunas.jug@gmail.com">kaunas.jug@gmail.com</a>
         </div>
         <div class="col-sm-2 header">
           Saulius Tvarijonas <a href="https://lt.linkedin.com/in/sauliust"><img src="img/linkedin_icon.png" alt="Saulius Tvarijonas LinkedIn Profile"></a>
@@ -1004,8 +1002,17 @@
 
     </div>
    </div>
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function updateCurrentYear(elementId) {
+            const today = new Date();
+            const year = today.getFullYear(); // e.g. 2025
+            document.getElementById(elementId).textContent = year;
+        }
+        updateCurrentYear("current-year");
+    </script>
 
 <!-- CAFE BABE -->
 </body>
