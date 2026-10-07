@@ -241,7 +241,8 @@
         <!-- EVENTBRITE JUMBO -->
         <!-- ======================================================================================== -->
 
-            <div id="eventbrite-widget-container-1984832853495"></div>
+            
+            <div id="eventbrite-widget-container-2003088057301"></div>
 
             <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 
@@ -251,13 +252,18 @@
                 };
 
                 window.EBWidgets.createWidget({
+                    // Required
                     widgetType: 'checkout',
-                    eventId: '1984832853495',
-                    iframeContainerId: 'eventbrite-widget-container-1984832853495',
-                    iframeContainerHeight: 425,
-                    onOrderComplete: exampleCallback
+                    eventId: '2003088057301',
+                    iframeContainerId: 'eventbrite-widget-container-2003088057301',
+
+                    // Optional
+                    iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+
+                    onOrderComplete: exampleCallback  // Method called when an order has successfully completed
                 });
             </script>
+
 
         <!-- ======================================================================================== -->
         <!-- EVENTBRITE JUMBO -->
@@ -275,6 +281,17 @@
             <th class="tabletd30">Date</th>
             <th class="tabletd30">Event</th>
             <th class="tabletd40">Slides and Photos</th>
+        </tr>
+
+        <tr>
+            <td>2026-10-22</td>
+            <td><a href="https://kaunas-jug63.eventbrite.com">Meeting #63</a></td>
+            <td>
+                <ul>
+                    <li><a href="javascript:alert('Comming soon...')">When Microservices Don't Make Sense - Augustas Bastys at Danske Bank</a></li>
+                    <li><a href="javascript:alert('Comming soon...')">The Operator Pattern: Extending Kubernetes with Java - Gintaras Matulas at ATOMS</a></li>
+                </ul>
+            </td>
         </tr>
 
         <tr>
